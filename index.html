@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffccdf;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #ff3d3d;
+            color: white;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            #no {
+                position: relative;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Valentine? 💖</h1>
+    
+    <div class="button-container">
+        <button id="yes" onclick="alert('Yay! 🥰 Best decision ever!')">Yes</button>
+        <button id="no" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            var noButton = document.getElementById("no");
+            var maxX = window.innerWidth - noButton.offsetWidth - 20;
+            var maxY = window.innerHeight - noButton.offsetHeight - 20;
+            var x = Math.random() * maxX;
+            var y = Math.random() * maxY;
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+
+</body>
+</html>
